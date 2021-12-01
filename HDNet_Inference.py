@@ -24,7 +24,7 @@ from hourglass_net_normal import hourglass_normal_prediction
 from utils import (write_matrix_txt,get_origin_scaling,get_concat_h, depth2mesh, read_test_data, nmap_normalization, get_test_data) 
 
 ############################## test path and outpath ##################################
-data_main_path = './test_data'
+data_main_path = './hdnet'
 outpath = data_main_path+"/infer_out/"
 visualization = True
 

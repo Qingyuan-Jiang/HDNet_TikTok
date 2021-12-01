@@ -115,6 +115,8 @@ for f in range(len(test_files)):
     write_matrix_txt(imagen[..., 1] * Z[0, ..., 0], Vis_dir + data_name + "_normal_2.txt")
     write_matrix_txt(imagen[..., 2] * Z[0, ..., 0], Vis_dir + data_name + "_normal_3.txt")
     depth2mesh(image * Z[0, ..., 0], Z[0, ..., 0], Vis_dir + data_name + "_mesh")
+    np.save(Vis_dir + data_name + '_depth.npy', image)
+
     if visualization:
         depth_map = image * Z[0, ..., 0]
         normal_map = imagen * Z3[0, ...]
@@ -139,5 +141,5 @@ for f in range(len(test_files)):
         final_im = get_concat_h(final_im, Image.fromarray(np.uint8(n)))
         final_im.save(Vis_dir + data_name + "_results.png")
 
-        os.remove(Vis_dir + data_name + "_depth.png")
-        os.remove(Vis_dir + data_name + "_normal.png")
+        # os.remove(Vis_dir + data_name + "_depth.png")
+        # os.remove(Vis_dir + data_name + "_normal.png")
